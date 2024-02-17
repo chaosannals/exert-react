@@ -1,6 +1,13 @@
 # exert react
 
 ```bash
+# 创建 react 裸项目
+npx create-react-app my-app
+# 或者 npm
+npm init react-app my-app
+# 指定 ts
+npx create-react-app my-app --template typescript
+
 # 创建基于 next.js 后端框架 的 react 项目
 npx create-next-app@latest
 
@@ -18,3 +25,7 @@ npx create-gatsby
 # web 这个直接打不开。
 npx create-expo-app
 ```
+
+## 参考书籍
+
+[创建一个React App](https://create-react-app.dev/)
