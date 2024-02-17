@@ -1,0 +1,16 @@
+.chess3x3Status {
+    display: flex;
+}
+
+.chess3x3Board {
+    display: flex;   
+}
+
+.chess3x3BoardRow {
+    display: flex;
+}
+
+.chess3x3Square {
+    width: 2em;
+    height: 2em;
+}
