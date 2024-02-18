@@ -1,19 +1,20 @@
-import { useRoutes } from 'react-router-dom';
-import IndexPage from './pages/IndexPage';
+import { useRoutes } from "react-router-dom";
+import IndexPage from "./pages/IndexPage";
+import { lazy } from "react";
 
 function App() {
   const routes = useRoutes([
     {
-      path: '/',
-      element: <IndexPage/>,
+      path: "/",
+      element: <IndexPage />,
+    },
+    {
+      path: "*",
+      Component: lazy(() => import("./pages/ErrorPage")),
     },
   ]);
 
-  return (
-    <>
-      {routes}
-    </>
-  )
+  return <>{routes}</>;
 }
 
-export default App
+export default App;
