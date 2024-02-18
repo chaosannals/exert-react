@@ -1,6 +1,8 @@
 import { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
+import styles from "./IndexPage.module.scss";
+import classNames from "classnames";
 
 export default function IndexPage() {
   const [count, setCount] = useState(0);
@@ -9,10 +11,14 @@ export default function IndexPage() {
     <div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src={viteLogo} className={styles.logo} alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <img
+            src={reactLogo}
+            className={classNames(styles.logo, styles.react)}
+            alt="React logo"
+          />
         </a>
       </div>
       <h1>Vite + React</h1>
@@ -24,9 +30,7 @@ export default function IndexPage() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className={styles["read-the-docs"]}>{Object.keys(styles).join(",")}</p>
     </div>
   );
 }
