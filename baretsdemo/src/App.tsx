@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//必须空引入一次 react 不然无法使用原始元素 例如 div
+// 此处由于引入的其他组件已经引入过了，所以可以不用。
+// 如果没有关联的组件不引入 就会报错。
+// import React from 'react';
+import { useRoutes } from "react-router-dom";
+
+import IndexPage from "./pages/IndexPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // useRoutes 居然必须再函数体内调用。
+  const routes = useRoutes([
+    {
+      path: "/",
+      element: <IndexPage />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
+    },
+  ]);
+  return <div className="App">{routes}</div>;
 }
 
 export default App;
