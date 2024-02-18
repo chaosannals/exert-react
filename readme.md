@@ -8,6 +8,9 @@ npm init react-app my-app
 # 指定 ts
 npx create-react-app my-app --template typescript
 
+# 使用 vite 创建，这样可以使用 编译期 vite 的方法。
+npm create vite@latest
+
 # 创建基于 next.js 后端框架 的 react 项目
 npx create-next-app@latest
 
