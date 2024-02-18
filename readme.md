@@ -29,11 +29,14 @@ npx create-gatsby
 npx create-expo-app
 ```
 
-## 类比
+## 提示
 
 useState 类似 remember var
 useMemo  类似 computed 和 remember val
 useCallback 类似 remember val
+
+
+没有类似 vue 注册组件 vue.component() 方式。所有组件都是 import 后使用。
 
 ## 参考书籍
 
