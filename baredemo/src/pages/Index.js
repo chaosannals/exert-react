@@ -1,4 +1,6 @@
 import logo from '../logo.svg';
+import { NavLink } from 'react-router-dom';
+import styles from './Index.module.scss';
 
 export default function Index() {
     return (
@@ -15,7 +17,10 @@ export default function Index() {
           >
             Learn React
           </a>
-          
+          <div className={styles.links}>
+            <NavLink to="">首页</NavLink>
+            <NavLink to="/chess3x3">棋</NavLink>
+          </div>
         </header>
     );
 }
