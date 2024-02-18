@@ -29,6 +29,12 @@ npx create-gatsby
 npx create-expo-app
 ```
 
+## 类比
+
+useState 类似 remember var
+useMemo  类似 computed 和 remember val
+useCallback 类似 remember val
+
 ## 参考书籍
 
 [创建一个React App](https://create-react-app.dev/)
