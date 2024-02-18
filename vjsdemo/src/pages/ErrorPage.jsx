@@ -1,5 +1,5 @@
+import styles from "./ErrorPage.module.scss";
+
 export default function ErrorPage() {
-    return (
-        <div></div>
-    );
+  return <div className={styles.page}></div>;
 }
