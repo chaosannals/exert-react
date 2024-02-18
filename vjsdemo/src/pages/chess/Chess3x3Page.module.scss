@@ -1,3 +1,20 @@
 .page {
     display: flex;
+    flex-direction: column;
+}
+
+.square {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #ddd;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
 }
