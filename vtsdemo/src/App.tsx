@@ -1,9 +1,14 @@
 import { useRoutes } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
+import { routes } from "./routes";
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
 
 function App() {
-  const routes = useRoutes([
+  const pages = useRoutes([
     {
       path: "/",
       element: <IndexPage />,
@@ -12,9 +17,12 @@ function App() {
       path: "*",
       Component: lazy(() => import("./pages/ErrorPage")),
     },
+    ...routes,
   ]);
 
-  return <>{routes}</>;
+  console.log('pages', pages);
+
+  return <Suspense fallback={<Loading />}>{pages}</Suspense>;
 }
 
 export default App;
