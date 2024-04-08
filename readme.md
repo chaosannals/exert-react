@@ -34,6 +34,8 @@ npx create-expo-app
 useState 类似 remember var
 useMemo  类似 computed 和 remember val
 useCallback 类似 remember val
+useEffect 类似 LaunchEffect 但是是同步的，异步要借助其他库。
+
 
 
 没有类似 vue 注册组件 vue.component() 方式。所有组件都是 import 后使用。
