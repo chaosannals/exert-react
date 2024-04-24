@@ -1,24 +1,27 @@
 import { kebabCase } from "lodash";
 import { lazy } from "react";
 
-// 
+//
 function loadPages() {
   const modules = import.meta.glob("./pages/*/*.jsx");
   return Object.keys(modules).map((fileName) => {
     const match = fileName.match(/.+?pages\/(.+?)Page.jsx/);
-    const path =
-      "/" +
-      match[1]
-        .split("/")
-        .map((i) => kebabCase(i))
-        .join("/");
-    return {
-      path: path,
-      Component: lazy(modules[fileName]),
-      // Component: lazy(() => import(`./pages/${match[1]}Page.jsx`)), // 不可用，动态字符串没办法被编译器识别替换。
-      // Component: lazy(() => import('./pages/chess/Chess3x3Page.jsx')),
-    };
-  });
+    if (match) {
+      const path =
+        "/" +
+        match[1]
+          .split("/")
+          .map((i) => kebabCase(i))
+          .join("/");
+      return {
+        path: path,
+        Component: lazy(modules[fileName]),
+        // Component: lazy(() => import(`./pages/${match[1]}Page.jsx`)), // 不可用，动态字符串没办法被编译器识别替换。
+        // Component: lazy(() => import('./pages/chess/Chess3x3Page.jsx')),
+      };
+    }
+    return null;
+  }).filter(i => i);
 }
 
 // 异步惰性加载很奇怪，首次切换路由不会加载。只能同步加载。
