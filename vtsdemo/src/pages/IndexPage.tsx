@@ -4,9 +4,11 @@ import viteLogo from "/vite.svg";
 import styles from "./IndexPage.module.scss";
 import { routes } from "../routes";
 import { Link } from "react-router-dom";
+import { stateFoo } from "../stores/single";
 
 export default function IndexPage() {
   const [count, setCount] = useState(0);
+  const [foo, setFoo] = stateFoo();
 
   return (
     <div className={styles.page}>
@@ -34,8 +36,18 @@ export default function IndexPage() {
       <p className={styles["read-the-docs"]}>{Object.keys(styles).join(",")}</p>
       <div className={styles["link-list"]}>
         {routes.map((r) => {
-          return <Link key={r.path} to={r.path} >{r.path}</Link>;
+          return (
+            <Link key={r.path} to={r.path}>
+              {r.path}
+            </Link>
+          );
         })}
+      </div>
+      <div>
+        <input
+          value={foo.name}
+          onChange={(e) => setFoo({ name: e.target.value, age: foo.age })}
+        />
       </div>
     </div>
   );
