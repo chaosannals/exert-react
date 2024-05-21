@@ -32,9 +32,9 @@ export default function IndexPage() {
         </p>
       </div>
       <p className={styles["read-the-docs"]}>{Object.keys(styles).join(",")}</p>
-      <div>
+      <div className={styles["link-list"]}>
         {routes.map((r) => {
-          return <Link to={r.path} >{r.path}</Link>;
+          return <Link key={r.path} to={r.path} >{r.path}</Link>;
         })}
       </div>
     </div>
