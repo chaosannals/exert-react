@@ -20,7 +20,7 @@ function App() {
     ...routes,
   ]);
 
-  console.log('pages', pages);
+  console.log('pages', pages); // 路由变动会走 2 次App 函数。。。
 
   return <Suspense fallback={<Loading />}>{pages}</Suspense>;
 }

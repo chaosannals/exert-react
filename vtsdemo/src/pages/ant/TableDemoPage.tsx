@@ -41,7 +41,7 @@ export default function TableDemoPage() {
       ];
       for (let i = 0; i < 1000; ++i) {
         newRows.push({
-          key: `${i}`,
+          key: `${i + 20}`,
           name: `胡彦斌${i}`,
           age: i,
           address: `西湖区湖底公园${i}号`,
@@ -54,7 +54,7 @@ export default function TableDemoPage() {
   return (
     <div>
       {version}
-      <Table dataSource={dataSource} columns={columns} />
+      <Table dataSource={dataSource} columns={columns} rowKey="key"/>
     </div>
   );
 }
