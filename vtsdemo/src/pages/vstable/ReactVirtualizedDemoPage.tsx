@@ -1,3 +1,3 @@
-import 'react-virtualized/styles.css';
-
-
+export default function ReactVirtualizedDemoPage() {
+  return <div></div>;
+}

@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { registerAllModules } from 'handsontable/registry';
 import 'handsontable/dist/handsontable.full.min.css';
 
+import 'react-virtualized/styles.css';
+
 registerAllModules();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

@@ -1,0 +1,9 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.vc-box {
+    flex-grow: 1;
+}
